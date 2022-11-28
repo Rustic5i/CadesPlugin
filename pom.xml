@@ -38,21 +38,23 @@
     </dependencies>
 
     <build>
-<!--        <resources>-->
-<!--            <resource>-->
-<!--                <directory>src/main/web-app</directory>-->
-<!--                <includes>-->
-<!--                    <include>*.*</include>-->
-<!--                </includes>-->
-<!--                <excludes>-->
-<!--                    <exclude>dist/**</exclude>-->
-<!--                </excludes>-->
-<!--            </resource>-->
-<!--            <resource>-->
-<!--                <directory>src/main/web-app</directory>-->
-<!--                <targetPath>src</targetPath>-->
-<!--            </resource>-->
-<!--        </resources>-->
+        <resources>
+            <resource>
+                <directory>src/main/web-app</directory>
+                <includes>
+                    <include>*.*</include>
+                </includes>
+                <excludes>
+                    <exclude>dist/**</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>src/main/web-app</directory>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -60,68 +62,4 @@
             </plugin>
         </plugins>
     </build>
-
-<!--    <profiles>-->
-<!--        <profile>-->
-<!--            <id>webui_dev</id>-->
-<!--            <activation>-->
-<!--                <activeByDefault>false</activeByDefault>-->
-<!--            </activation>-->
-<!--            <build>-->
-<!--                <resources>-->
-<!--                    <resource>-->
-<!--                        <directory>src/main/web-app/dist</directory>-->
-<!--                        <targetPath>dist</targetPath>-->
-<!--                    </resource>-->
-<!--                </resources>-->
-<!--                <plugins>-->
-<!--                    <plugin>-->
-<!--                        <groupId>com.github.eirslett</groupId>-->
-<!--                        <artifactId>frontend-maven-plugin</artifactId>-->
-<!--                        <version>1.7.6</version>-->
-<!--                        <configuration>-->
-<!--                            <installDirectory>./web-app</installDirectory>-->
-<!--                            <workingDirectory>./web-app</workingDirectory>-->
-<!--                            <environmentVariables>-->
-<!--                                <theme>theme-lb</theme>-->
-<!--                            </environmentVariables>-->
-<!--                        </configuration>-->
-<!--                        <executions>-->
-<!--                            <execution>-->
-<!--                                <id>install node and npm</id>-->
-<!--                                <phase>initialize</phase>-->
-<!--                                <goals>-->
-<!--                                    <goal>install-node-and-npm</goal>-->
-<!--                                </goals>-->
-<!--                                <configuration>-->
-<!--                                    <nodeVersion>v11.15.0</nodeVersion>-->
-<!--                                    &lt;!&ndash;<npmVersion>3.8.3</npmVersion>&ndash;&gt;-->
-<!--                                </configuration>-->
-<!--                            </execution>-->
-<!--                            <execution>-->
-<!--                                <id>npm install</id>-->
-<!--                                <phase>initialize</phase>-->
-<!--                                <goals>-->
-<!--                                    <goal>npm</goal>-->
-<!--                                </goals>-->
-<!--                                <configuration>-->
-<!--                                    <arguments>install</arguments>-->
-<!--                                </configuration>-->
-<!--                            </execution>-->
-<!--                            <execution>-->
-<!--                                <id>npm run build dev</id>-->
-<!--                                <goals>-->
-<!--                                    <goal>npm</goal>-->
-<!--                                </goals>-->
-<!--                                <configuration>-->
-<!--                                    <arguments>run dev</arguments>-->
-<!--                                </configuration>-->
-<!--                            </execution>-->
-<!--                        </executions>-->
-<!--                    </plugin>-->
-<!--                </plugins>-->
-<!--            </build>-->
-<!--        </profile>-->
-<!--    </profiles>-->
-
 </project>
