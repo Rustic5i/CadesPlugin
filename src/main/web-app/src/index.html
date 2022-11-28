@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="/resource/scripts/cadesplugin_api.js"></script>
+</head>
+<body ng-app="app">
+<div ng-controller="CspService as vm">
+    <div>
+        <form name="myForm">
+            <label>
+                Количество подписаний:
+                <input type="text" name="totalSign" ng-model="total" required>
+            </label>
+        </form>
+    </div>
+    <div>
+        <button ng-click="vm.getAllCerts()"><p>Выберать сертификат</p></button>
+        <div ng-if="vm.isCerts()">
+            <div ng-repeat="cert in certs">
+                <button ng-click="vm.signContent(cert.certInfo.thumbprint)">{{cert.certInfo.subject.CN}}</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
