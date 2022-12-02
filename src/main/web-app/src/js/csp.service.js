@@ -93,10 +93,12 @@ function CspService($scope, CSPPlugin, _) {
         await setContentEncoding(oSignedDataObj, cadesplugin.CADESCOM_BASE64_TO_BINARY);
         console.log("Начало операции setContent(oSignedDataObj, params.content)")
         await setContent(oSignedDataObj, params.content);
-
         try {
             console.log("Начало операции oSignedDataObj.SignCades()")
-            return await oSignedDataObj.SignCades(oSigner, signType, true);
+            let res = await oSignedDataObj.SignCades(oSigner, signType, true);
+            console.log("Удаление объектов плагина")
+            const bool = await cadesplugin.ReleasePluginObjects();
+            return res;
         } catch (e) {
             console.error("При выполнении операции oSignedDataObj.SignCades() произошла ошибка" + e.message);
             throw {

@@ -16,7 +16,7 @@
         </form>
     </div>
     <div>
-        <button ng-click="vm.getAllCerts()"><p>Выберать сертификат</p></button>
+        <button ng-click="vm.getAllCerts()"><p>Выбрать сертификат</p></button>
         <div ng-if="vm.isCerts()">
             <div ng-repeat="cert in certs">
                 <button ng-click="vm.signContent(cert.certInfo.thumbprint)">{{cert.certInfo.subject.CN}}</button>
